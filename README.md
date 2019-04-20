@@ -1,7 +1,7 @@
 # Chess_Pieces
 Repository of SVG Chess Piece Sets
 
-## Instructions to make ScidvsPC Compatible Piece Sets from SVG Images you Find on the Internet
+## Instructions to make ScidvsPC Compatible Piece Sets from SVG Images
 Use the script entitled "MkScidPieces_fromSVG" in the repository. </br>
 Dependencies : rsvg-convert </br>
 To install, use _brew install rsvg-convert_ </br>
