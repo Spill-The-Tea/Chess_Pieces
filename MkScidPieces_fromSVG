@@ -1,0 +1,39 @@
+#!/bin/sh
+
+input=$1
+target=$2
+
+#pieces="B K N P Q R b k n p q r"
+pieces="wb wk wn wp wq wr bb bk bn bp bq br"
+sizes="25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 105 110 115 120 125 130 135 140 145 150 155 160"
+
+echo "lappend boardStyles $input \n"
+
+for size in $sizes
+do
+	for pic in $pieces
+	do
+        rsvg-convert --width $size --height $size --format png --background-color none $input/$pic.svg > $input/$pic-$size.png
+	done
+
+	montage -geometry "$size"x"$size+0+0" -background transparent -tile 12x1 \
+		$input/wp-$size.png $input/wn-$size.png $input/wb-$size.png \
+		$input/wr-$size.png $input/wq-$size.png $input/wk-$size.png \
+        $input/bp-$size.png $input/bn-$size.png $input/bb-$size.png \
+        $input/br-$size.png $input/bq-$size.png $input/bk-$size.png \
+        $input/$input-$size.gif
+
+    echo "set pieceImageData($input,$size) {"
+    openssl base64 -in $input/$input-$size.gif
+    echo "}"
+
+    rm $input/wp-$size.png $input/wn-$size.png $input/wb-$size.png \
+    $input/wr-$size.png $input/wq-$size.png $input/wk-$size.png \
+    $input/bp-$size.png $input/bn-$size.png $input/bb-$size.png \
+    $input/br-$size.png $input/bq-$size.png $input/bk-$size.png
+
+    rm $input/$input-$size.gif
+done
+
+
+
