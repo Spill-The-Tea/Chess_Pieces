@@ -18,3 +18,5 @@ Save the output into a text file, and save this into usr/{name of User}/.scidvsp
 3. [Lichess API](https://github.com/ornicar/lila/tree/master/public/piece)
 4. [Aquarium Steel & Wood Set](http://rybkaforum.net/cgi-bin/rybkaforum/topic_show.pl?tid=15257) by Greg Mallen
 5. [Python-chess](https://github.com/niklasf/python-chess/blob/master/chess/svg.py#L34)
+6. [Gnome](https://gitlab.gnome.org/GNOME/gnome-chess/tree/master/data/pieces)
+7. 
